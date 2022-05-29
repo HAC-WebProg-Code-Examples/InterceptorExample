@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+</head>
+<body>
+<h2>Site Statistics</h2>
+<h3>Requests per url:</h3>
+<ul th:unless="${mean.isNaN}">
+    <li th:text="|Mean: ${mean}|">No data...</li>
+    <li th:text="|Variance: ${var}|">No data...</li>
+    <li th:text="|Standard Deviation: ${std}|">No data...</li>
+</ul>
+<p th:if="${mean.isNaN}">
+    No data yet...
+</p>
+</body>
+</html>
